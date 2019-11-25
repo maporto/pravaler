@@ -1,0 +1,17 @@
+<md-button type="button" class="md-raised md-primary" ng-click="novo()">Adicionar Instituição</md-button>
+<div class="md-padding" layout="column">
+  <div ng-repeat="instituicao in instituicoes" flex-xs flex-gt-xs="50" layout="column">
+    <md-card>
+      <md-card-title>
+        <md-card-title-text>
+          <span class="md-headline">Nome: {{instituicao.nome}}</span>
+          <span class="md-subhead">Cnpj: {{instituicao.cnpj}}</span>
+        </md-card-title-text>
+      </md-card-title>
+      <md-card-actions layout="row" layout-align="end center">
+        <md-button type="button" class="md-raised md-primary" ng-click="editar(instituicao, $index)">Editar</md-button>
+        <md-button type="button" class="md-raised md-warn" ng-click="excluir(instituicao, $index)">Excluir</md-button>
+      </md-card-actions>
+    </md-card>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+<div flex>
+    <md-input-container>
+        <label>Instituição</label>
+        <md-select ng-model="instituicao" ng-change="buscaCursos(instituicao);">
+            <md-option ng-repeat="inst in instituicoes" ng-value="inst">
+                {{inst.nome}}
+            </md-option>
+        </md-select>
+    </md-input-container>
+    <md-input-container>
+        <label>Curso</label>
+        <md-select ng-model="curso" ng-change="buscaAlunos(curso);" ng-disabled="!instituicao">
+            <md-option ng-repeat="curso in cursos" ng-value="curso">
+                {{curso.nome}}
+            </md-option>
+        </md-select>
+    </md-input-container>
+    <md-button type="button" class="md-raised md-primary" ng-click="novo()" ng-disabled="!instituicao || !curso">Adicionar Aluno</md-button>
+</div>
+<div class="md-padding" layout="column">
+    <div ng-repeat="aluno in alunos" flex-xs flex-gt-xs="50" layout="column">
+        <md-card>
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-headline">Nome: {{aluno.nome}}</span>
+                    <span class="md-subhead">CPF: {{aluno.cpf}}</span>
+                </md-card-title-text>
+            </md-card-title>
+            <md-card-actions layout="row" layout-align="end center">
+                <md-button type="button" class="md-raised md-primary" ng-click="editar(aluno, $index)">Editar
+                </md-button>
+                <md-button type="button" class="md-raised md-warn" ng-click="excluir(aluno, $index)">Excluir</md-button>
+            </md-card-actions>
+        </md-card>
+    </div>
+</div>

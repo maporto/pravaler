@@ -1,0 +1,28 @@
+<div flex>
+    <md-input-container>
+        <label>Instituição</label>
+        <md-select ng-model="instituicao" ng-change="buscaCursos(instituicao);">
+            <md-option ng-repeat="inst in instituicoes" ng-value="inst">
+                {{inst.nome}}
+            </md-option>
+        </md-select>
+    </md-input-container>
+    <md-button type="button" class="md-raised md-primary" ng-click="novo()" ng-disabled="!instituicao">Adicionar Curso</md-button>
+</div>
+<div class="md-padding" layout="column">
+    <div ng-repeat="curso in cursos" flex-xs flex-gt-xs="50" layout="column">
+        <md-card>
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-headline">Nome: {{curso.nome}}</span>
+                    <span class="md-subhead">Duração em Horas: {{curso.duracao}}</span>
+                </md-card-title-text>
+            </md-card-title>
+            <md-card-actions layout="row" layout-align="end center">
+                <md-button type="button" class="md-raised md-primary" ng-click="editar(curso, $index)">Editar
+                </md-button>
+                <md-button type="button" class="md-raised md-warn" ng-click="excluir(curso, $index)">Excluir</md-button>
+            </md-card-actions>
+        </md-card>
+    </div>
+</div>
