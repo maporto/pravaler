@@ -1,19 +1,19 @@
-# Pre requisitos
+# Pré requisitos
 
 * NODE
 * NPM
 * PHP
 * COMPOSER
 
-# teste1
+# teste 01
 
 php teste1.php
 
-# teste2
+# teste 02
 
 php teste2.php
 
-# sistema
+# Sistema
 
 ## Api
 
