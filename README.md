@@ -1,9 +1,9 @@
 # Pre requisitos
 
-## NODE
-## NPM
-## PHP
-## COMPOSER
+-- NODE
+-- NPM
+-- PHP
+-- COMPOSER
 
 # teste1
 
